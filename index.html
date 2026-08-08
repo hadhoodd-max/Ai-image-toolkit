@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional AI Image Creator Toolkit 2026 | Imagination Dreams</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Parisienne&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF6EC;
+    --cream-2:#F2EADA;
+    --navy:#1E2340;
+    --navy-soft:#4A4E72;
+    --gold:#C79A4B;
+    --gold-soft:#E9D6A8;
+    --mauve:#C97FA3;
+    --lavender:#A79BD1;
+    --sky:#8FBFE0;
+    --line:rgba(30,35,64,0.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--navy);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{ font-family:'Fraunces',serif; color:var(--navy); font-weight:600; letter-spacing:-0.01em;}
+  .script{ font-family:'Parisienne',cursive; color:var(--mauve); font-weight:400; }
+  a{ text-decoration:none; color:inherit; }
+  img{ display:block; max-width:100%; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 28px; }
+  section{ position:relative; }
+
+  /* ---------- AMAZON BANNER ---------- */
+  .amz-banner{
+    background:linear-gradient(90deg, var(--navy), #2B3159);
+    color:var(--cream); text-align:center;
+    padding:12px 18px; font-size:0.86rem;
+  }
+  .amz-banner a{
+    color:var(--gold-soft); font-weight:700; margin-left:8px;
+    border-bottom:1px solid rgba(233,214,168,0.5);
+  }
+  .amz-banner a:hover{ color:#fff; }
+
+  /* ---------- NAV ---------- */
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 28px; max-width:1120px; margin:0 auto; gap:14px; flex-wrap:wrap;
+  }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand img{ width:40px; height:40px; border-radius:50%; }
+  .brand span{ font-family:'Fraunces',serif; font-weight:600; font-size:1.05rem; }
+  .brand span em{ font-family:'Parisienne',cursive; font-style:normal; color:var(--mauve); }
+  .nav-actions{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .cta-small{
+    background:var(--navy); color:var(--cream); padding:10px 22px;
+    border-radius:30px; font-size:0.85rem; font-weight:600; letter-spacing:0.02em;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .cta-small:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(30,35,64,0.25); }
+  .cta-ghost{
+    border:1.5px solid var(--line); color:var(--navy); padding:9px 20px;
+    border-radius:30px; font-size:0.85rem; font-weight:600;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .cta-ghost:hover{ border-color:var(--gold); background:rgba(199,154,75,0.08); }
+
+  /* ---------- HERO ---------- */
+  .hero{ padding:40px 28px 70px; position:relative; }
+  .hero-glow{
+    position:absolute; top:-120px; left:50%; transform:translateX(-50%);
+    width:900px; height:700px; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(167,155,209,0.5), transparent 55%),
+      radial-gradient(circle at 70% 25%, rgba(201,127,163,0.4), transparent 55%),
+      radial-gradient(circle at 50% 55%, rgba(143,191,224,0.45), transparent 55%);
+    filter:blur(50px);
+    animation: drift 14s ease-in-out infinite alternate;
+  }
+  @keyframes drift{
+    0%{ transform:translateX(-50%) translateY(0px) scale(1); }
+    100%{ transform:translateX(-52%) translateY(18px) scale(1.03); }
+  }
+  .stars{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+  .star{
+    position:absolute; width:5px; height:5px; background:var(--gold);
+    border-radius:50%; opacity:0.7; animation: twinkle 3.2s ease-in-out infinite;
+  }
+  @keyframes twinkle{
+    0%,100%{ opacity:0.15; transform:scale(0.8); }
+    50%{ opacity:0.9; transform:scale(1.3); }
+  }
+  .hero-grid{
+    position:relative; z-index:1; max-width:1120px; margin:0 auto;
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:54px; align-items:center;
+  }
+  @media(max-width:900px){ .hero-grid{ grid-template-columns:1fr; } }
+  .hero-text{ text-align:left; }
+  .eyebrow{
+    font-size:0.8rem; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--gold); font-weight:700; margin-bottom:16px;
+  }
+  .hero h1{
+    font-size:clamp(2rem, 4.4vw, 3.1rem); line-height:1.12; margin-bottom:18px;
+  }
+  .hero h1 .accent{ color:var(--mauve); font-style:italic; }
+  .hero p.lead{ color:var(--navy-soft); font-size:1.05rem; max-width:480px; margin-bottom:30px; }
+  .cta-row{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:14px; }
+  .btn-primary{
+    background:linear-gradient(135deg, var(--gold), #B8863A);
+    color:var(--cream); padding:16px 32px; border-radius:40px;
+    font-weight:700; font-size:1rem; box-shadow:0 14px 28px rgba(199,154,75,0.38);
+    transition:transform .2s ease, box-shadow .2s ease; display:inline-block;
+  }
+  .btn-primary:hover{ transform:translateY(-3px); box-shadow:0 18px 34px rgba(199,154,75,0.48); }
+  .btn-secondary{
+    border:1.5px solid var(--line); color:var(--navy); padding:15px 28px;
+    border-radius:40px; font-weight:600; font-size:0.95rem;
+    transition:border-color .2s ease, background .2s ease; display:inline-block;
+  }
+  .btn-secondary:hover{ border-color:var(--gold); background:rgba(199,154,75,0.06); }
+  .hero-note{ font-size:0.82rem; color:var(--navy-soft); opacity:0.8; }
+
+  .cover-frame{
+    position:relative; display:flex; justify-content:center;
+  }
+  .cover-frame img{
+    width:100%; max-width:340px; border-radius:14px;
+    box-shadow:0 30px 60px rgba(30,35,64,0.35), 0 8px 18px rgba(30,35,64,0.2);
+    transform:rotate(2deg);
+    transition:transform .4s ease;
+  }
+  .cover-frame img:hover{ transform:rotate(0deg) scale(1.02); }
+  .cover-badge{
+    position:absolute; bottom:-16px; left:50%; transform:translateX(-50%);
+    background:var(--cream); border:1px solid var(--line); border-radius:30px;
+    padding:8px 18px; font-size:0.75rem; font-weight:700; color:var(--navy);
+    box-shadow:0 10px 20px rgba(30,35,64,0.12); white-space:nowrap;
+  }
+
+  /* ---------- STAT BAR ---------- */
+  .stats{
+    display:flex; justify-content:center; gap:0; flex-wrap:wrap;
+    margin:56px auto 0; max-width:900px;
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    padding:26px 0;
+  }
+  .stat{ flex:1; min-width:130px; text-align:center; padding:8px 14px; }
+  .stat b{ display:block; font-family:'Fraunces',serif; font-size:1.7rem; color:var(--navy); }
+  .stat span{ font-size:0.76rem; color:var(--navy-soft); letter-spacing:0.02em; }
+
+  /* ---------- SECTION HEAD ---------- */
+  .section-head{ text-align:center; max-width:620px; margin:0 auto 46px; }
+  .section-head .eyebrow{ margin-bottom:12px; }
+  .section-head h2{ font-size:clamp(1.6rem,3.2vw,2.2rem); margin-bottom:14px; }
+  .section-head p{ color:var(--navy-soft); }
+
+  /* ---------- TOC / WHAT'S INSIDE ---------- */
+  .inside{ padding:90px 0 70px; }
+  .inside-grid{ display:grid; grid-template-columns:1.15fr 0.85fr; gap:50px; align-items:start; }
+  @media(max-width:860px){ .inside-grid{ grid-template-columns:1fr; } }
+  .toc-card{
+    background:#fff; border:1px solid var(--line); border-radius:22px;
+    padding:36px 32px; box-shadow:0 20px 50px rgba(30,35,64,0.06);
+  }
+  .toc-group{ margin-bottom:24px; }
+  .toc-group:last-child{ margin-bottom:0; }
+  .toc-group h4{
+    font-family:'Inter',sans-serif; font-size:0.7rem; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--mauve); font-weight:700; margin-bottom:10px;
+  }
+  .toc-line{ display:flex; align-items:baseline; gap:8px; font-size:0.92rem; color:var(--navy); padding:5px 0; }
+  .toc-line .dots{ flex:1; border-bottom:1.5px dotted var(--line); margin-bottom:5px; }
+
+  .book-mock{
+    position:sticky; top:30px;
+    background:linear-gradient(160deg, var(--navy) 0%, #2B3159 100%);
+    border-radius:20px; padding:34px 26px; color:var(--cream);
+    text-align:center; box-shadow:0 30px 60px rgba(30,35,64,0.28);
+    display:flex; flex-direction:column; align-items:center; gap:14px;
+  }
+  .book-mock img{ width:100%; max-width:220px; border-radius:10px; box-shadow:0 14px 30px rgba(0,0,0,0.4); }
+  .book-mock .v{ font-size:0.72rem; letter-spacing:0.15em; color:var(--gold-soft); text-transform:uppercase; }
+  .book-mock .pages{ font-size:0.78rem; color:rgba(251,246,236,0.65); }
+
+  /* ---------- COMPATIBLE TOOLS ---------- */
+  .tools-band{
+    background:var(--navy); color:var(--cream); padding:34px 28px; text-align:center;
+  }
+  .tools-band .eyebrow{ color:var(--gold-soft); margin-bottom:14px; }
+  .tools-row{ display:flex; justify-content:center; gap:28px; flex-wrap:wrap; font-size:0.92rem; font-weight:600; }
+  .tools-row span{ opacity:0.5; font-size:0.7rem; font-weight:400; display:block; }
+
+  /* ---------- EXAMPLES ---------- */
+  .examples{ padding:90px 0; background:var(--cream-2); }
+  .example-block{ margin-bottom:56px; }
+  .example-block:last-child{ margin-bottom:0; }
+  .example-head{ display:flex; align-items:baseline; gap:12px; margin-bottom:18px; flex-wrap:wrap; }
+  .example-head h3{ font-size:1.15rem; }
+  .example-head .tag{
+    font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--mauve); font-weight:700; background:rgba(201,127,163,0.12);
+    padding:4px 10px; border-radius:20px;
+  }
+  .example-imgs{ display:grid; gap:16px; }
+  .example-imgs.single{ grid-template-columns:minmax(0,340px); }
+  .example-imgs.double{ grid-template-columns:1fr 1fr; }
+  @media(max-width:640px){ .example-imgs.double{ grid-template-columns:1fr; } }
+  .example-imgs img{
+    width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:16px;
+    box-shadow:0 16px 32px rgba(30,35,64,0.12);
+  }
+  .example-cap{ text-align:center; font-size:0.75rem; color:var(--navy-soft); margin-top:8px; letter-spacing:0.03em; text-transform:uppercase; }
+
+  /* ---------- BONUS ---------- */
+  .bonus{ padding:90px 0; }
+  .bonus-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
+  @media(max-width:900px){ .bonus-grid{ grid-template-columns:1fr 1fr; } }
+  @media(max-width:520px){ .bonus-grid{ grid-template-columns:1fr; } }
+  .bonus-card{
+    padding:26px 22px; border-radius:18px; background:#fff;
+    border:1px solid var(--line); transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .bonus-card:hover{ transform:translateY(-4px); box-shadow:0 16px 32px rgba(30,35,64,0.08); }
+  .bonus-card .num{ font-family:'Fraunces',serif; color:var(--gold); font-size:1.5rem; margin-bottom:8px; }
+  .bonus-card h4{ font-size:0.98rem; margin-bottom:6px; color:var(--navy); font-weight:700; }
+  .bonus-card p{ font-size:0.83rem; color:var(--navy-soft); }
+
+  /* ---------- WHO ---------- */
+  .who{ padding:80px 0; background:var(--cream-2); }
+  .who-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; text-align:center; }
+  @media(max-width:900px){ .who-grid{ grid-template-columns:1fr 1fr; } }
+  @media(max-width:520px){ .who-grid{ grid-template-columns:1fr; } }
+  .who-card{ padding:18px 12px; background:#fff; border-radius:14px; border:1px solid var(--line); }
+  .who-card p{ font-size:0.85rem; color:var(--navy); font-weight:600; }
+
+  /* ---------- LOVE IT ---------- */
+  .love{ padding:80px 0; }
+  .love-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  @media(max-width:760px){ .love-grid{ grid-template-columns:1fr 1fr; } }
+  @media(max-width:520px){ .love-grid{ grid-template-columns:1fr; } }
+  .love-item{ display:flex; gap:12px; align-items:flex-start; }
+  .love-item .mark{ color:var(--gold); font-weight:800; font-size:1.1rem; }
+  .love-item p{ font-size:0.9rem; color:var(--navy-soft); }
+
+  /* ---------- CTA BAND ---------- */
+  .cta-band{
+    margin:0 auto; max-width:1000px; padding:64px 40px;
+    background:linear-gradient(135deg, var(--navy), #2B3159);
+    border-radius:28px; text-align:center; color:var(--cream);
+    position:relative; overflow:hidden;
+  }
+  .cta-band::before{
+    content:''; position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(167,155,209,0.35), transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(201,127,163,0.3), transparent 40%);
+  }
+  .cta-band > *{ position:relative; z-index:1; }
+  .cta-band h2{ color:var(--cream); font-size:clamp(1.5rem,3.4vw,2.1rem); margin-bottom:12px; }
+  .cta-band p{ color:rgba(251,246,236,0.75); max-width:460px; margin:0 auto 26px; }
+  .price-tag{ font-family:'Fraunces',serif; font-size:2.2rem; margin-bottom:6px; }
+  .price-tag span{ font-size:0.95rem; color:rgba(251,246,236,0.6); font-family:'Inter',sans-serif; }
+  .cta-band .cta-row{ justify-content:center; margin-top:16px; }
+  .btn-outline-light{
+    border:1.5px solid rgba(251,246,236,0.4); color:var(--cream); padding:15px 28px;
+    border-radius:40px; font-weight:600; font-size:0.95rem; display:inline-block;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .btn-outline-light:hover{ border-color:var(--gold-soft); background:rgba(251,246,236,0.08); }
+
+  /* ---------- FAQ ---------- */
+  .faq{ padding:90px 0; max-width:760px; margin:0 auto; }
+  .faq-item{ border-bottom:1px solid var(--line); padding:20px 0; }
+  .faq-item h4{ font-size:1rem; margin-bottom:8px; font-weight:700; }
+  .faq-item p{ color:var(--navy-soft); font-size:0.9rem; }
+
+  /* ---------- MORE FROM ---------- */
+  .more{ padding:90px 0; background:var(--cream-2); }
+  .more-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+  @media(max-width:860px){ .more-grid{ grid-template-columns:1fr 1fr; } }
+  @media(max-width:480px){ .more-grid{ grid-template-columns:1fr 1fr; gap:14px;} }
+  .more-card{ text-align:center; }
+  .more-card a.cover-link{ display:block; border-radius:10px; overflow:hidden; box-shadow:0 12px 26px rgba(30,35,64,0.14); margin-bottom:10px; transition:transform .2s ease; }
+  .more-card a.cover-link:hover{ transform:translateY(-4px); }
+  .more-card img{ width:100%; aspect-ratio:2/3; object-fit:cover; }
+  .more-card a.title-link{ font-size:0.84rem; font-weight:700; color:var(--navy); line-height:1.35; }
+  .more-card a.title-link:hover{ color:var(--mauve); }
+
+  /* ---------- FOOTER ---------- */
+  footer{ padding:54px 28px 36px; text-align:center; border-top:1px solid var(--line); }
+  footer .brand{ justify-content:center; margin-bottom:12px; }
+  footer .tagline{ font-size:0.8rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); margin-bottom:20px; }
+  footer .foot-actions{ display:flex; gap:12px; justify-content:center; margin-bottom:22px; flex-wrap:wrap; }
+  footer .copy{ font-size:0.78rem; color:var(--navy-soft); opacity:0.7; }
+
+  @media (prefers-reduced-motion: reduce){ .hero-glow, .star{ animation:none !important; } }
+</style>
+</head>
+<body>
+
+<div class="amz-banner">
+  Also available on Amazon
+  <a href="https://amzn.to/4wjXqXU">Get it on Amazon →</a>
+</div>
+
+<nav>
+  <div class="brand">
+    <img src="assets/logo.webp" alt="Imagination Dreams">
+    <span>Imagination <em>Dreams</em></span>
+  </div>
+  <div class="nav-actions">
+    <a href="mailto:imaginationdreams2026@hotmail.com" class="cta-ghost">Contact us</a>
+    <a href="https://imaginationdreams.gumroad.com/l/vaehry" class="cta-small">Get the Toolkit</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="stars" id="stars"></div>
+  <div class="hero-grid">
+    <div class="hero-text">
+      <div class="eyebrow">AI Tools · Prompts · Templates</div>
+      <h1>Create stunning, <span class="accent">professional-quality</span> AI images with confidence</h1>
+      <p class="lead">A 44-page toolkit of expert prompts, a step-by-step workflow, and practical cheat sheets — built for today's leading AI image models.</p>
+      <div class="cta-row">
+        <a href="https://imaginationdreams.gumroad.com/l/vaehry" class="btn-primary">Get the Toolkit — $14.99</a>
+        <a href="#inside" class="btn-secondary">See what's inside</a>
+      </div>
+      <div class="hero-note">Instant digital download · PDF · Lifetime updates included</div>
+    </div>
+    <div class="cover-frame">
+      <img src="assets/toolkit_cover.jpg" alt="Professional AI Image Creator Toolkit 2026 cover">
+      <div class="cover-badge">Version 1.0 · August 2026</div>
+    </div>
+  </div>
+
+  <div class="stats wrap">
+    <div class="stat"><b>44</b><span>Pages</span></div>
+    <div class="stat"><b>20</b><span>Expert prompts</span></div>
+    <div class="stat"><b>5+</b><span>AI tools covered</span></div>
+    <div class="stat"><b>EN/AR</b><span>Bilingual</span></div>
+    <div class="stat"><b>∞</b><span>Future updates</span></div>
+  </div>
+</section>
+
+<section class="inside" id="inside">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Table of Contents</div>
+      <h2>Everything you need, laid out for you</h2>
+      <p>No fluff. Just a clear path from "what tool do I even use" to consistently great AI images.</p>
+    </div>
+    <div class="inside-grid">
+      <div class="toc-card">
+        <div class="toc-group">
+          <h4>Introduction</h4>
+          <div class="toc-line"><span>Welcome</span><span class="dots"></span></div>
+          <div class="toc-line"><span>Quick Start Guide</span><span class="dots"></span></div>
+          <div class="toc-line"><span>Who Is This Toolkit For?</span><span class="dots"></span></div>
+          <div class="toc-line"><span>How to Choose the Right AI Tool</span><span class="dots"></span></div>
+          <div class="toc-line"><span>Professional AI Image Workflow</span><span class="dots"></span></div>
+        </div>
+        <div class="toc-group">
+          <h4>AI Image Prompt Collection</h4>
+          <div class="toc-line"><span>Image Generation Prompts (01–10)</span><span class="dots"></span></div>
+          <div class="toc-line"><span>Image Editing Prompts (11–20)</span><span class="dots"></span></div>
+        </div>
+        <div class="toc-group">
+          <h4>Quick References</h4>
+          <div class="toc-line"><span>Quick Cheat Sheet</span><span class="dots"></span></div>
+          <div class="toc-line"><span>General Tips for Best Results</span><span class="dots"></span></div>
+        </div>
+        <div class="toc-group">
+          <h4>Bonus Professional Resources</h4>
+          <div class="toc-line"><span>Professional Photography Cheat Sheet</span><span class="dots"></span></div>
+          <div class="toc-line"><span>50 Professional Style Keywords</span><span class="dots"></span></div>
+          <div class="toc-line"><span>Universal Prompt Formula</span><span class="dots"></span></div>
+          <div class="toc-line"><span>Common Prompting Mistakes</span><span class="dots"></span></div>
+        </div>
+        <div class="toc-group">
+          <h4>Support &amp; Updates</h4>
+          <div class="toc-line"><span>Frequently Asked Questions</span><span class="dots"></span></div>
+          <div class="toc-line"><span>Future Updates</span><span class="dots"></span></div>
+          <div class="toc-line"><span>Thank You</span><span class="dots"></span></div>
+        </div>
+      </div>
+      <div class="book-mock">
+        <img src="assets/toolkit_cover.jpg" alt="Toolkit cover">
+        <div class="v">2026 Edition</div>
+        <div class="pages">44 pages · PDF · Instant download</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tools-band">
+  <div class="eyebrow">Built For Leading AI Image Models</div>
+  <div class="tools-row">
+    <div>Midjourney <span>V8.2</span></div>
+    <div>GPT Image <span>2</span></div>
+    <div>Nano Banana <span>2</span></div>
+    <div>FLUX <span>.2 Pro</span></div>
+    <div>Recraft <span>V4.1</span></div>
+  </div>
+</div>
+
+<section class="examples">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">See It In Action</div>
+      <h2>Real prompts, real results</h2>
+      <p>A few of the 20 prompts inside the toolkit, applied.</p>
+    </div>
+
+    <div class="example-block">
+      <div class="example-head"><h3>Cinematic Environment Concept Art</h3><span class="tag">Generation</span></div>
+      <div class="example-imgs single">
+        <div><img src="assets/ex_env.jpg" alt="Cinematic environment concept art example"></div>
+      </div>
+    </div>
+
+    <div class="example-block">
+      <div class="example-head"><h3>Consistent Character Reference Across Multiple Scenes</h3><span class="tag">Generation</span></div>
+      <div class="example-imgs double">
+        <div><img src="assets/ex_char1.jpg" alt="Character in scene one"><div class="example-cap">Scene one</div></div>
+        <div><img src="assets/ex_char2.jpg" alt="Character in scene two"><div class="example-cap">Scene two</div></div>
+      </div>
+    </div>
+
+    <div class="example-block">
+      <div class="example-head"><h3>Image Editing &amp; Modification</h3><span class="tag">Editing</span></div>
+      <div class="example-imgs double">
+        <div><img src="assets/ex_edit_before.jpg" alt="Before editing"><div class="example-cap">Before</div></div>
+        <div><img src="assets/ex_edit_after.jpg" alt="After editing"><div class="example-cap">After</div></div>
+      </div>
+    </div>
+
+    <div class="example-block">
+      <div class="example-head"><h3>Change Clothing/Style While Preserving Identity</h3><span class="tag">Editing</span></div>
+      <div class="example-imgs double">
+        <div><img src="assets/ex_style_before.jpg" alt="Before style change"><div class="example-cap">Before</div></div>
+        <div><img src="assets/ex_style_after.jpg" alt="After style change"><div class="example-cap">After</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bonus">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bonus Professional Resources</div>
+      <h2>The reference pages you'll keep coming back to</h2>
+    </div>
+    <div class="bonus-grid">
+      <div class="bonus-card"><div class="num">01</div><h4>Photography Cheat Sheet</h4><p>Camera and lighting language that makes any AI image look professionally shot.</p></div>
+      <div class="bonus-card"><div class="num">02</div><h4>50 Style Keywords</h4><p>A ready reference of styles and moods to mix into your own prompts.</p></div>
+      <div class="bonus-card"><div class="num">03</div><h4>Universal Prompt Formula</h4><p>One structure you can reuse for any subject, tool, or style.</p></div>
+      <div class="bonus-card"><div class="num">04</div><h4>Common Prompting Mistakes</h4><p>The small wording issues that quietly wreck good results — and how to avoid them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="who">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Perfect For</div>
+      <h2>Built for anyone creating with AI</h2>
+    </div>
+    <div class="who-grid">
+      <div class="who-card"><p>Graphic Designers</p></div>
+      <div class="who-card"><p>Digital Artists</p></div>
+      <div class="who-card"><p>Content Creators</p></div>
+      <div class="who-card"><p>Social Media Managers</p></div>
+      <div class="who-card"><p>Marketing Professionals</p></div>
+      <div class="who-card"><p>Small Business Owners</p></div>
+      <div class="who-card"><p>E-commerce Brands</p></div>
+      <div class="who-card"><p>Entrepreneurs</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="love">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why You'll Love It</div>
+      <h2>Built to save you time, not add to it</h2>
+    </div>
+    <div class="love-grid">
+      <div class="love-item"><span class="mark">✔</span><p>Save hours of trial and error</p></div>
+      <div class="love-item"><span class="mark">✔</span><p>Create more consistent results</p></div>
+      <div class="love-item"><span class="mark">✔</span><p>Improve image quality</p></div>
+      <div class="love-item"><span class="mark">✔</span><p>Learn professional prompting techniques</p></div>
+      <div class="love-item"><span class="mark">✔</span><p>Build a faster creative workflow</p></div>
+      <div class="love-item"><span class="mark">✔</span><p>Suitable for beginners and professionals</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="get" style="padding:20px 28px 100px;">
+  <div class="cta-band">
+    <div class="eyebrow" style="color:var(--gold-soft);">Instant Download</div>
+    <h2>Start creating better AI images today</h2>
+    <p>One-time payment. 44 pages, 20 prompts, and every bonus resource — yours to keep, with free future updates.</p>
+    <div class="price-tag">$14.99 <span>USD · one-time</span></div>
+    <div class="cta-row">
+      <a href="https://imaginationdreams.gumroad.com/l/vaehry" class="btn-primary">Get it on Gumroad</a>
+      <a href="https://amzn.to/4wjXqXU" class="btn-outline-light">Get it on Amazon</a>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="section-head">
+    <div class="eyebrow">FAQ</div>
+    <h2>Good to know</h2>
+  </div>
+  <div class="faq-item"><h4>What format is the toolkit delivered in?</h4><p>A 44-page digital PDF you can read on any device, plus quick-reference pages you'll want to keep open while you work.</p></div>
+  <div class="faq-item"><h4>Do I need a specific AI tool to use these prompts?</h4><p>No — the toolkit explains how to choose the right AI tool for your goal, then gives you prompts that adapt across today's leading AI image generators.</p></div>
+  <div class="faq-item"><h4>Is the content bilingual?</h4><p>Yes, the toolkit includes content in both English and Arabic.</p></div>
+  <div class="faq-item"><h4>Can I use the results commercially?</h4><p>Yes, the toolkit is commercial-use friendly.</p></div>
+  <div class="faq-item"><h4>Will I get future updates?</h4><p>Yes. Version 1.0 includes free future updates as AI image tools evolve.</p></div>
+</section>
+
+<section class="more">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">More From Imagination Dreams</div>
+      <h2>You might also like</h2>
+    </div>
+    <div class="more-grid">
+      <div class="more-card">
+        <a class="cover-link" href="https://imaginationdreams.gumroad.com/l/xvsdq"><img src="assets/book_promptmastery.jpg" alt="AI Prompt Mastery: From Beginner to Professional"></a>
+        <a class="title-link" href="https://imaginationdreams.gumroad.com/l/xvsdq">AI Prompt Mastery: From Beginner to Professional</a>
+      </div>
+      <div class="more-card">
+        <a class="cover-link" href="https://hadhoodd-max.github.io/Imagination-Dreams-Stories/"><img src="assets/book_stories.jpg" alt="Imagination Dreams Stories"></a>
+        <a class="title-link" href="https://hadhoodd-max.github.io/Imagination-Dreams-Stories/">Imagination Dreams Stories</a>
+      </div>
+      <div class="more-card">
+        <a class="cover-link" href="https://hadhoodd-max.github.io/pick-studio-coloring/"><img src="assets/book_coloring.jpg" alt="Imagination Dreams Coloring Books"></a>
+        <a class="title-link" href="https://hadhoodd-max.github.io/pick-studio-coloring/">Imagination Dreams Coloring Books</a>
+      </div>
+      <div class="more-card">
+        <a class="cover-link" href="https://amzn.to/4g6QreW"><img src="assets/book_sudoku.jpg" alt="MindGrid Sudoku: 60 Sudoku Puzzles"></a>
+        <a class="title-link" href="https://amzn.to/4g6QreW">MindGrid Sudoku: 60 Puzzles</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">
+    <img src="assets/logo.webp" alt="Imagination Dreams" style="width:34px;height:34px;">
+    <span>Imagination <em>Dreams</em></span>
+  </div>
+  <div class="tagline">Inspire · Create · Dream</div>
+  <div class="foot-actions">
+    <a href="mailto:imaginationdreams2026@hotmail.com" class="cta-ghost">Contact us</a>
+    <a href="https://imaginationdreams.gumroad.com/l/vaehry" class="cta-small">Get the Toolkit</a>
+  </div>
+  <div class="copy">&copy; 2026 Imagination Dreams. All rights reserved.</div>
+</footer>
+
+<script>
+  const starsWrap = document.getElementById('stars');
+  const positions = [[12,18],[22,8],[35,22],[48,6],[58,16],[68,9],[78,20],[85,30],[15,32],[30,4],[62,28],[90,14],[8,25],[44,14],[72,4]];
+  positions.forEach(([x,y],i)=>{
+    const s = document.createElement('div');
+    s.className = 'star'; s.style.left = x + '%'; s.style.top = y + '%';
+    s.style.animationDelay = (i*0.3) + 's';
+    starsWrap.appendChild(s);
+  });
+</script>
+
+</body>
+</html>
